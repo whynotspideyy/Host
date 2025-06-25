@@ -21,7 +21,7 @@ import threading
 import re # Added for regex matching in auto-install
 import sys # Added for sys.executable
 import atexit
-import requests # For polling exceptions
+import re*quests # For polling exceptions
 import hashlib
 import telebot
 
@@ -32,8 +32,8 @@ import os
 import telebot
 import os
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-IS_CLONE = os.environ.get("IS_CLONE") == "1"
+_BOT_TOKEN = os.environ.get("BOT_TOKEN")
+#IS_CLONE = os.environ.get("IS_CLONE") == "1"
 
 if IS_CLONE:
     def wipe_clone_data():
@@ -56,10 +56,10 @@ if IS_CLONE:
     wipe_clone_data()
     print("🧠 Confirmed: This is a clone bot.")
     
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-if not BOT_TOKEN:
-    BOT_TOKEN = input("🤖 Enter your bot token: ").strip()
-bot = telebot.TeleBot(BOT_TOKEN)
+#BOT_TOKEN = os.environ.get("BOT_TOKEN")
+#if not BOT_TOKEN:
+ #   BOT_TOKEN = input("🤖 Enter your bot token: ").strip()
+#bot = telebot.TeleBot(BOT_TOKEN)
 
 # Baaki aapka existing code yahan se shuru
 import sqlite3
@@ -85,6 +85,7 @@ def get_id(role):
     return result[0] if result else None
 
 # Fetch IDs from Database or Prompt
+BOT_TOKEN = "7693159839:AAGY2d7Sgu1KsKSl_1VRjKa8MmANo6AB_Ko"
 OWNER_ID = get_id("owner")  # Fetch Owner ID from the database
 ADMIN_ID = get_id("admin")  # Fetch Admin ID from the database
 
